@@ -5,6 +5,11 @@ on:
     # Daily auto-update; GitHub Actions cron is UTC (CST = UTC+8)
     - cron: "27 1 * * *"
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Calculate changes without publishing
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -15,6 +20,7 @@ jobs:
     uses: ca-x/lazycat-github-action/.github/workflows/lazycat.yml@v1
     with:
       operation: auto
+      dry-run: ${{ inputs.dry_run || false }}
       config: .github/lazycat-action.yml
       versioned-release-asset: true
     secrets:
