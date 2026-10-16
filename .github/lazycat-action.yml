@@ -24,9 +24,7 @@ images:
     sort: created
     tag_regex: "^latest$"
     delivery:
-      mode: mirror
-      image_template: "ghcr.1ms.run/christian-gennari/nostos:{tag}"
-      require_digest_match: true
+      mode: direct
 
 stores:
   official:

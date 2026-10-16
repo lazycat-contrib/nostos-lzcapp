@@ -5,7 +5,9 @@
 ## 形态
 
 - 单容器镜像：`ghcr.io/christian-gennari/nostos`，端口 8080，数据在 `/data`
-- 镜像交付：mirror 模式（`ghcr.1ms.run/christian-gennari/nostos:{tag}`）
+- 镜像交付：direct 模式（manifest 直连 `ghcr.io/christian-gennari/nostos`）
+  - 原因：上游仅有 mutable `latest`，而 mutable mirror 的 digest 校验链路对该镜像不可用；
+    私有商店支持 direct 交付，因此直连上游镜像并固定 digest
 - 版本发现：上游只有 mutable 的 `latest` tag（CI 通过后才发布）与不可变 `selfhosted-sha-<commit>`，
   因此按 mutable tag 规则配置：`channel: custom` + `sort: created` + `tag_regex: ^latest$`
   + `bump: patch`（digest 变化才递增 patch 版本，未变则 no-op）
