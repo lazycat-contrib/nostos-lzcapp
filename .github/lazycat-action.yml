@@ -1,0 +1,41 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/nostos.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: nostos
+    bump: patch
+
+images:
+  - id: nostos
+    target: service
+    service: nostos
+    source: ghcr.io/christian-gennari/nostos
+    channel: custom
+    sort: created
+    tag_regex: "^latest$"
+    delivery:
+      mode: mirror
+      image_template: "ghcr.1ms.run/christian-gennari/nostos:{tag}"
+      require_digest_match: true
+
+stores:
+  official:
+    enabled: false
+    skip_if_version_exists: false
+    retry:
+      enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Nostos 阅读书房
+    summary: 镜像加速模式自动跟上游 SelfHosted 镜像发布的自托管阅读应用

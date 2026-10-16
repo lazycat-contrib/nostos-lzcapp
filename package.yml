@@ -1,0 +1,18 @@
+package: community.lazycat.app.nostos
+version: 0.1.0
+name: Nostos 阅读书房
+description: 自托管阅读空间，读你的书、记录心得，把阅读变成思考与写作
+min_os_version: 1.5.0
+homepage: https://github.com/Christian-Gennari/Nostos
+author: Christian-Gennari
+license: GPL-3.0
+locales:
+  zh:
+    name: Nostos 阅读书房
+    description: 自托管阅读空间，读你的书、记录心得，把阅读变成思考与写作
+  zh_CN:
+    name: Nostos 阅读书房
+    description: 自托管阅读空间，读你的书、记录心得，把阅读变成思考与写作
+  en:
+    name: Nostos
+    description: A home for your reading life, self-hosted

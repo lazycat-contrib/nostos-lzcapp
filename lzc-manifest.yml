@@ -1,0 +1,17 @@
+application:
+  subdomain: nostos
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://nostos:8080/
+
+services:
+  nostos:
+    # ghcr.io/christian-gennari/nostos:latest
+    image: ghcr.1ms.run/christian-gennari/nostos:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - DataProtection__KeysPath=/data/keys
+    binds:
+      - /lzcapp/var/data:/data
