@@ -22,7 +22,7 @@ images:
     source: ghcr.io/christian-gennari/nostos
     channel: custom
     sort: created
-    tag_regex: "^latest$"
+    tag_regex: ^latest$
     delivery:
       mode: direct
 
