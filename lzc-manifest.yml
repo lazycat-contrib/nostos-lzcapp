@@ -8,8 +8,8 @@ application:
 services:
   nostos:
     # ghcr.io/christian-gennari/nostos:latest
-    # upstream: ghcr.io/christian-gennari/nostos:latest@sha256:96914a4b60e90438829fcf1aca66ea701f68124fff07bad29ae9f8bb8cb5c69e
-    image: ghcr.io/christian-gennari/nostos:latest@sha256:96914a4b60e90438829fcf1aca66ea701f68124fff07bad29ae9f8bb8cb5c69e
+    # upstream: ghcr.io/christian-gennari/nostos:latest@sha256:d67b9a3c2139b9f1a54a0e8029a1d9219b3dbaceac5a2498a2fbb6b9e1c9910a
+    image: ghcr.io/christian-gennari/nostos:latest@sha256:d67b9a3c2139b9f1a54a0e8029a1d9219b3dbaceac5a2498a2fbb6b9e1c9910a
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - DataProtection__KeysPath=/data/keys
